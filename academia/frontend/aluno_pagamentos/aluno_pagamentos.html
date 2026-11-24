@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamentos | IRON FITNESS</title>
+  <link rel="stylesheet" href="../comum/estilo.css">
+  <link rel="stylesheet" href="../comum/crud.css">
+</head>
+<body data-perfil="aluno">
+<div class="shell">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main class="main-area">
+    <header class="topbar"><div class="topbar-title">IRON FITNESS / Pagamentos</div><div class="topbar-actions"><button class="btn btn-secondary mobile-menu" id="menuBtn">☰</button><span class="muted" style="font-size:12px">Área do Aluno</span></div></header>
+    <section class="content">
+      <div class="page-heading">
+        <div><span class="eyebrow">Meu espaço</span><h1>Pagamentos</h1><p>Seus pagamentos e o Pix para pagar o que está em aberto.</p></div>
+      </div>
+      <div class="panel">
+        <h3>Meus pagamentos</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Plano</th><th>Valor</th><th>Forma</th><th>Data</th><th>Situação</th><th>Ação</th></tr></thead>
+          <tbody id="tbPagamentos"></tbody>
+        </table></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="modal-fundo" id="modalPix">
+  <div class="modal" style="max-width:420px;text-align:center">
+    <h2>Pagar com Pix</h2>
+    <p class="muted" id="pixValor"></p>
+    <img id="pixQr" alt="QR Code do Pix" width="260" height="260" style="background:#fff;padding:8px;border-radius:12px;display:block;margin:6px auto 14px">
+    <div class="field"><label for="pixCodigo">Pix copia e cola</label><textarea id="pixCodigo" rows="3" readonly style="font-size:11px;word-break:break-all;resize:none"></textarea></div>
+    <small class="muted">Abra o app do seu banco, escolha pagar com Pix e escaneie o código (ou cole o texto). Depois do pagamento, a academia confirma o recebimento e o seu plano é ativado.</small>
+    <div class="modal-rodape">
+      <button type="button" class="btn btn-secondary" id="btnCopiar">Copiar código</button>
+      <button type="button" class="btn" id="btnFecharPix">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<script src="../comum/sessao.js"></script>
+<script src="../comum/imagens.js"></script>
+<script src="../comum/menu.js"></script>
+<script src="../comum/crud.js"></script>
+<script src="aluno_pagamentos.js"></script>
+</body>
+</html>

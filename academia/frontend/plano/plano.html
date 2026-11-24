@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planos | IRON FITNESS</title>
+  <link rel="stylesheet" href="../comum/estilo.css">
+  <link rel="stylesheet" href="../comum/crud.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main class="main-area">
+    <header class="topbar"><div class="topbar-title">IRON FITNESS / Planos</div><div class="topbar-actions"><button class="btn btn-secondary mobile-menu" id="menuBtn">☰</button><span class="muted" style="font-size:12px">Área Gerência</span></div></header>
+    <section class="content">
+      <div class="page-heading">
+        <div><span class="eyebrow">Academia</span><h1>Planos</h1><p>Defina valores, duração e quantas aulas cada plano permite.</p></div>
+        <button class="btn" id="btnNovo">+ Novo plano</button>
+      </div>
+      <div class="panel"><div class="table-wrap"><table>
+        <thead><tr><th>Plano</th><th>Valor</th><th>Duração</th><th>Aulas coletivas</th><th>Matrículas</th><th>Status</th><th>Ações</th></tr></thead>
+        <tbody id="tbPlanos"></tbody>
+      </table></div></div>
+    </section>
+  </main>
+</div>
+
+<div class="modal-fundo" id="modalPlano">
+  <div class="modal">
+    <h2 id="tituloModal">Novo plano</h2>
+    <form id="formPlano" novalidate>
+      <div class="form-grid">
+        <div class="field full"><label for="nome">Nome do plano</label><input id="nome" maxlength="50" required></div>
+        <div class="field full"><label for="descricao">Descrição</label><textarea id="descricao" rows="2" maxlength="200"></textarea></div>
+        <div class="field"><label for="valor">Valor (R$)</label><input id="valor" type="number" min="0" step="0.01" required></div>
+        <div class="field"><label for="duracao">Duração (meses)</label><input id="duracao" type="number" min="1" max="60" step="1" required></div>
+        <div class="field full"><label for="aulasSemana">Aulas coletivas por semana</label><input id="aulasSemana" type="number" min="0" max="21" step="1"><small>0 = sem aulas coletivas (só musculação) · deixe vazio para ilimitado.</small></div>
+      </div>
+      <div class="alert alert-error" id="erroForm" hidden></div>
+      <div class="modal-rodape">
+        <button type="button" class="btn btn-secondary" id="btnCancelar">Cancelar</button>
+        <button type="submit" class="btn" id="btnSalvar">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../comum/sessao.js"></script>
+<script src="../comum/imagens.js"></script>
+<script src="../comum/menu.js"></script>
+<script src="../comum/crud.js"></script>
+<script src="plano.js"></script>
+</body>
+</html>

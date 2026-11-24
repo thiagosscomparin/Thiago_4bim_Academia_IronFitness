@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | IRON FITNESS</title>
+  <link rel="stylesheet" href="../comum/estilo.css">
+  <link rel="stylesheet" href="../comum/paineis.css">
+</head>
+<body data-perfil="instrutor">
+<div class="shell">
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <main class="main-area">
+    <header class="topbar"><div class="topbar-title">IRON FITNESS / Instrutor</div><div class="topbar-actions"><button class="btn btn-secondary mobile-menu" id="menuBtn">☰</button><span class="muted" style="font-size:12px">Área do Instrutor</span></div></header>
+    <section class="content">
+      <div class="banner-dashboard" data-banner="bannerInstrutor" role="img" aria-label="Banner da academia"></div>
+      <div class="page-heading">
+        <div><span class="eyebrow">Painel do instrutor</span><h1>Olá, <span id="primeiroNome">Instrutor</span>.</h1><p id="subtitulo">Sua rotina de hoje.</p></div>
+        <span class="status status-off" id="statusCarga">● Carregando...</span>
+      </div>
+      <div class="alert alert-error" id="avisoErro" hidden></div>
+
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-top"><span>Minhas aulas</span><span class="stat-icon">🗓️</span></div><div class="stat-value" id="v-aulas">–</div><div class="stat-note">Na grade semanal</div></div>
+        <div class="stat-card"><div class="stat-top"><span>Meus alunos</span><span class="stat-icon">👥</span></div><div class="stat-value" id="v-alunos">–</div><div class="stat-note">Em aulas ou fichas</div></div>
+        <div class="stat-card"><div class="stat-top"><span>Fichas sob minha responsabilidade</span><span class="stat-icon">🏋️</span></div><div class="stat-value" id="v-fichas">–</div><div class="stat-note">Ativas (consulta)</div></div>
+        <div class="stat-card"><div class="stat-top"><span>Reservas futuras</span><span class="stat-icon">✅</span></div><div class="stat-value" id="v-reservas">–</div><div class="stat-note">Nas minhas aulas</div></div>
+      </div>
+
+      <div class="panel-grid">
+        <div class="panel"><h3>Minha agenda semanal</h3><div class="table-wrap"><table>
+          <thead><tr><th>Dia</th><th>Horário</th><th>Modalidade</th><th>Vagas</th></tr></thead><tbody id="tbAgenda"></tbody></table></div></div>
+        <div class="panel"><h3>Próximas reservas</h3><div class="table-wrap"><table>
+          <thead><tr><th>Data</th><th>Hora</th><th>Aula</th><th>Aluno</th></tr></thead><tbody id="tbReservas"></tbody></table></div></div>
+      </div>
+
+      <div class="panel panel-full"><h3>Fichas dos meus alunos</h3><div class="table-wrap"><table>
+        <thead><tr><th>Aluno</th><th>Ficha</th><th>Objetivo</th><th>Exercícios</th></tr></thead><tbody id="tbFichas"></tbody></table></div></div>
+    </section>
+  </main>
+</div>
+<script src="../comum/sessao.js"></script>
+<script src="../comum/imagens.js"></script>
+<script src="../comum/menu.js"></script>
+<script src="../comum/painel.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>

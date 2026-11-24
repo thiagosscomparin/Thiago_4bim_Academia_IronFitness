@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fichas de treino | IRON FITNESS</title>
+  <link rel="stylesheet" href="../comum/estilo.css">
+  <link rel="stylesheet" href="../comum/crud.css">
+  <link rel="stylesheet" href="ficha_treino.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main class="main-area">
+    <header class="topbar"><div class="topbar-title">IRON FITNESS / Fichas de treino</div><div class="topbar-actions"><button class="btn btn-secondary mobile-menu" id="menuBtn">☰</button><span class="muted" style="font-size:12px">Área Gerência</span></div></header>
+    <section class="content">
+      <div class="page-heading">
+        <div><span class="eyebrow">Academia</span><h1>Fichas de treino</h1><p>Monte a ficha de cada aluno. Uma nova ficha arquiva a anterior no histórico.</p></div>
+        <button class="btn" id="btnNova">+ Nova ficha</button>
+      </div>
+      <div class="toolbar">
+        <input type="search" id="busca" placeholder="Buscar por nome ou CPF do aluno...">
+        <div class="field" style="min-width:180px"><select id="filtroSituacao">
+          <option value="">Ativas e histórico</option><option value="ativa">Só ativas</option><option value="historico">Só histórico</option></select></div>
+      </div>
+      <div class="panel"><div class="table-wrap"><table>
+        <thead><tr><th>Aluno</th><th>Ficha</th><th>Objetivo</th><th>Instrutor</th><th>Criada em</th><th>Exerc.</th><th>Situação</th><th>Ações</th></tr></thead>
+        <tbody id="tbFichas"></tbody>
+      </table></div></div>
+    </section>
+  </main>
+</div>
+
+<div class="modal-fundo" id="modalFicha">
+  <div class="modal modal-largo">
+    <h2 id="tituloModal">Nova ficha</h2>
+    <form id="formFicha" novalidate>
+      <div class="form-grid">
+        <div class="field"><label for="aluno">Aluno</label><select id="aluno" required></select></div>
+        <div class="field"><label for="instrutor">Instrutor responsável (opcional)</label><select id="instrutor"></select></div>
+        <div class="field"><label for="titulo">Título da ficha</label><input id="titulo" maxlength="80" required placeholder="Ex.: Hipertrofia ABC"></div>
+        <div class="field"><label for="objetivo">Objetivo</label><input id="objetivo" maxlength="100" placeholder="Ex.: Ganho de massa muscular"></div>
+        <div class="field full"><label for="observacoes">Observações gerais</label><textarea id="observacoes" rows="2" maxlength="300"></textarea></div>
+      </div>
+
+      <div class="cabecalho-exercicios">
+        <h3>Exercícios</h3>
+        <button type="button" class="btn btn-secondary btn-sm" id="btnAddExercicio">+ Adicionar exercício</button>
+      </div>
+      <div id="listaExercicios"></div>
+
+      <div class="alert alert-error" id="erroForm" hidden></div>
+      <div class="modal-rodape">
+        <button type="button" class="btn btn-secondary" id="btnCancelar">Cancelar</button>
+        <button type="submit" class="btn" id="btnSalvar">Salvar ficha</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../comum/sessao.js"></script>
+<script src="../comum/imagens.js"></script>
+<script src="../comum/menu.js"></script>
+<script src="../comum/crud.js"></script>
+<script src="ficha_treino.js"></script>
+</body>
+</html>

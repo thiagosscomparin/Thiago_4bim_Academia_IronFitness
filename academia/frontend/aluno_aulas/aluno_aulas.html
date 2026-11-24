@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aulas e reservas | IRON FITNESS</title>
+  <link rel="stylesheet" href="../comum/estilo.css">
+  <link rel="stylesheet" href="../comum/crud.css">
+</head>
+<body data-perfil="aluno">
+<div class="shell">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main class="main-area">
+    <header class="topbar"><div class="topbar-title">IRON FITNESS / Aulas e reservas</div><div class="topbar-actions"><button class="btn btn-secondary mobile-menu" id="menuBtn">☰</button><span class="muted" style="font-size:12px">Área do Aluno</span></div></header>
+    <section class="content">
+      <div class="page-heading">
+        <div><span class="eyebrow">Meu espaço</span><h1>Aulas e reservas</h1>
+          <p>Reserve aulas dos próximos 14 dias. O cancelamento é permitido até 2 horas antes, e o limite de aulas depende do seu plano.</p></div>
+      </div>
+
+      <div class="panel">
+        <h3>Aulas disponíveis</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Data</th><th>Horário</th><th>Aula</th><th>Instrutor</th><th>Vagas livres</th><th>Ação</th></tr></thead>
+          <tbody id="tbAulas"></tbody>
+        </table></div>
+      </div>
+
+      <div class="panel" style="margin-top:16px">
+        <h3>Minhas reservas</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Data</th><th>Horário</th><th>Aula</th><th>Instrutor</th><th>Situação</th><th>Ação</th></tr></thead>
+          <tbody id="tbReservas"></tbody>
+        </table></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="../comum/sessao.js"></script>
+<script src="../comum/imagens.js"></script>
+<script src="../comum/menu.js"></script>
+<script src="../comum/crud.js"></script>
+<script src="aluno_aulas.js"></script>
+</body>
+</html>

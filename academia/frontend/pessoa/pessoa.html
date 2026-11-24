@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pessoas | IRON FITNESS</title>
+  <link rel="stylesheet" href="../comum/estilo.css">
+  <link rel="stylesheet" href="../comum/crud.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <main class="main-area">
+    <header class="topbar"><div class="topbar-title">IRON FITNESS / Pessoas</div><div class="topbar-actions"><button class="btn btn-secondary mobile-menu" id="menuBtn">☰</button><span class="muted" style="font-size:12px">Área Gerência</span></div></header>
+    <section class="content">
+      <div class="page-heading">
+        <div><span class="eyebrow">Cadastros</span><h1>Pessoas</h1><p>Cadastre e gerencie alunos e demais pessoas da academia.</p></div>
+        <button class="btn" id="btnNova">+ Nova pessoa</button>
+      </div>
+
+      <div class="toolbar"><input type="search" id="busca" placeholder="Buscar por nome, CPF ou e-mail..."></div>
+
+      <div class="panel"><div class="table-wrap"><table>
+        <thead><tr><th>Nome</th><th>CPF</th><th>E-mail</th><th>Nascimento</th><th>Vínculos</th><th>Ações</th></tr></thead>
+        <tbody id="tbPessoas"></tbody>
+      </table></div></div>
+    </section>
+  </main>
+</div>
+
+<!-- Janela de cadastro / edição -->
+<div class="modal-fundo" id="modalPessoa">
+  <div class="modal">
+    <h2 id="tituloModal">Nova pessoa</h2>
+    <form id="formPessoa" novalidate>
+      <div class="form-grid">
+        <div class="field"><label for="cpf">CPF</label><input id="cpf" maxlength="14" placeholder="000.000.000-00" required></div>
+        <div class="field"><label for="nome">Nome completo</label><input id="nome" maxlength="80" required></div>
+        <div class="field"><label for="email">E-mail</label><input id="email" type="email" maxlength="80" required></div>
+        <div class="field"><label for="nascimento">Data de nascimento</label><input id="nascimento" type="date"></div>
+        <div class="field full"><label for="endereco">Endereço</label><input id="endereco" maxlength="150"></div>
+        <div class="field full"><label for="senha">Senha</label><input id="senha" type="password" maxlength="72" autocomplete="new-password"><small id="dicaSenha">Mínimo de 6 caracteres.</small></div>
+        <div class="field full">
+          <label class="check"><input type="checkbox" id="ehAluno"> Esta pessoa é aluno(a)</label>
+        </div>
+        <div class="field full" id="blocoObjetivo" hidden><label for="objetivo">Objetivo do aluno</label><input id="objetivo" maxlength="100" placeholder="Ex.: Ganho de massa muscular"></div>
+      </div>
+      <div class="alert alert-error" id="erroForm" hidden></div>
+      <div class="modal-rodape">
+        <button type="button" class="btn btn-secondary" id="btnCancelar">Cancelar</button>
+        <button type="submit" class="btn" id="btnSalvar">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../comum/sessao.js"></script>
+<script src="../comum/imagens.js"></script>
+<script src="../comum/menu.js"></script>
+<script src="../comum/crud.js"></script>
+<script src="pessoa.js"></script>
+</body>
+</html>

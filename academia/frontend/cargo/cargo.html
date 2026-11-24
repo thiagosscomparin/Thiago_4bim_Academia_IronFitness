@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cargos | IRON FITNESS</title>
+  <link rel="stylesheet" href="../comum/estilo.css">
+  <link rel="stylesheet" href="../comum/crud.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main class="main-area">
+    <header class="topbar"><div class="topbar-title">IRON FITNESS / Cargos</div><div class="topbar-actions"><button class="btn btn-secondary mobile-menu" id="menuBtn">☰</button><span class="muted" style="font-size:12px">Área Gerência</span></div></header>
+    <section class="content">
+      <div class="page-heading">
+        <div><span class="eyebrow">Cadastros</span><h1>Cargos</h1><p>O cargo define o que cada funcionário pode acessar no sistema.</p></div>
+        <button class="btn" id="btnNovo">+ Novo cargo</button>
+      </div>
+      <div class="panel"><div class="table-wrap"><table>
+        <thead><tr><th>Cargo</th><th>Acesso ao sistema</th><th>Funcionários</th><th>Ações</th></tr></thead>
+        <tbody id="tbCargos"></tbody>
+      </table></div></div>
+    </section>
+  </main>
+</div>
+
+<div class="modal-fundo" id="modalCargo">
+  <div class="modal">
+    <h2 id="tituloModal">Novo cargo</h2>
+    <form id="formCargo" novalidate>
+      <div class="form-grid">
+        <div class="field full"><label for="nome">Nome do cargo</label><input id="nome" maxlength="45" required></div>
+        <div class="field full"><label class="check"><input type="checkbox" id="acessoAdmin"> Acesso administrativo (área do gerente)</label></div>
+        <div class="field full"><label class="check"><input type="checkbox" id="instrutor"> Cargo de instrutor (área do instrutor)</label><small>Sem nenhuma das opções, o funcionário não consegue entrar no sistema.</small></div>
+      </div>
+      <div class="alert alert-error" id="erroForm" hidden></div>
+      <div class="modal-rodape">
+        <button type="button" class="btn btn-secondary" id="btnCancelar">Cancelar</button>
+        <button type="submit" class="btn" id="btnSalvar">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../comum/sessao.js"></script>
+<script src="../comum/imagens.js"></script>
+<script src="../comum/menu.js"></script>
+<script src="../comum/crud.js"></script>
+<script src="cargo.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matrículas | IRON FITNESS</title>
+  <link rel="stylesheet" href="../comum/estilo.css">
+  <link rel="stylesheet" href="../comum/crud.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main class="main-area">
+    <header class="topbar"><div class="topbar-title">IRON FITNESS / Matrículas</div><div class="topbar-actions"><button class="btn btn-secondary mobile-menu" id="menuBtn">☰</button><span class="muted" style="font-size:12px">Área Gerência</span></div></header>
+    <section class="content">
+      <div class="page-heading">
+        <div><span class="eyebrow">Financeiro</span><h1>Matrículas</h1><p>Ligue cada aluno a um plano e acompanhe o vencimento.</p></div>
+        <button class="btn" id="btnNova">+ Nova matrícula</button>
+      </div>
+      <div class="toolbar">
+        <input type="search" id="busca" placeholder="Buscar por nome ou CPF do aluno...">
+        <div class="field" style="min-width:180px"><select id="filtroSituacao">
+          <option value="">Todas as situações</option><option value="ATIVA">Ativas</option><option value="PENDENTE">Pendentes</option>
+          <option value="VENCIDA">Vencidas</option><option value="CANCELADA">Canceladas</option></select></div>
+      </div>
+      <div class="panel"><div class="table-wrap"><table>
+        <thead><tr><th>Aluno</th><th>Plano</th><th>Início</th><th>Vencimento</th><th>Situação</th><th>Ações</th></tr></thead>
+        <tbody id="tbMatriculas"></tbody>
+      </table></div></div>
+    </section>
+  </main>
+</div>
+
+<div class="modal-fundo" id="modalMatricula">
+  <div class="modal">
+    <h2 id="tituloModal">Nova matrícula</h2>
+    <form id="formMatricula" novalidate>
+      <div class="form-grid">
+        <div class="field full"><label for="aluno">Aluno</label><select id="aluno" required></select></div>
+        <div class="field full"><label for="plano">Plano</label><select id="plano" required></select></div>
+        <div class="field"><label for="inicio">Início</label><input id="inicio" type="date" required></div>
+        <div class="field"><label for="fim">Vencimento</label><input id="fim" type="date"><small>Calculado pelo plano; pode ajustar.</small></div>
+        <div class="field full"><label for="status">Situação</label><select id="status">
+          <option value="ATIVA">Ativa</option><option value="PENDENTE">Pendente (aguardando pagamento)</option><option value="CANCELADA">Cancelada</option></select></div>
+      </div>
+      <div class="alert alert-error" id="erroForm" hidden></div>
+      <div class="modal-rodape">
+        <button type="button" class="btn btn-secondary" id="btnCancelar">Cancelar</button>
+        <button type="submit" class="btn" id="btnSalvar">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../comum/sessao.js"></script>
+<script src="../comum/imagens.js"></script>
+<script src="../comum/menu.js"></script>
+<script src="../comum/crud.js"></script>
+<script src="matricula.js"></script>
+</body>
+</html>

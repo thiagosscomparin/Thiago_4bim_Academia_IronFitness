@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aulas | IRON FITNESS</title>
+  <link rel="stylesheet" href="../comum/estilo.css">
+  <link rel="stylesheet" href="../comum/crud.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main class="main-area">
+    <header class="topbar"><div class="topbar-title">IRON FITNESS / Aulas</div><div class="topbar-actions"><button class="btn btn-secondary mobile-menu" id="menuBtn">☰</button><span class="muted" style="font-size:12px">Área Gerência</span></div></header>
+    <section class="content">
+      <div class="page-heading">
+        <div><span class="eyebrow">Academia</span><h1>Aulas</h1><p>Monte a grade semanal: modalidade, instrutor, horário e vagas.</p></div>
+        <button class="btn" id="btnNova">+ Nova aula</button>
+      </div>
+      <div class="toolbar">
+        <div class="field" style="min-width:220px"><select id="filtroDia"><option value="">Todos os dias</option></select></div>
+      </div>
+      <div class="panel"><div class="table-wrap"><table>
+        <thead><tr><th>Dia</th><th>Horário</th><th>Modalidade</th><th>Instrutor</th><th>Vagas</th><th>Reservas futuras</th><th>Ações</th></tr></thead>
+        <tbody id="tbAulas"></tbody>
+      </table></div></div>
+    </section>
+  </main>
+</div>
+
+<div class="modal-fundo" id="modalAula">
+  <div class="modal">
+    <h2 id="tituloModal">Nova aula</h2>
+    <form id="formAula" novalidate>
+      <div class="form-grid">
+        <div class="field"><label for="modalidade">Modalidade</label><select id="modalidade" required></select></div>
+        <div class="field"><label for="instrutor">Instrutor</label><select id="instrutor" required></select></div>
+        <div class="field"><label for="dia">Dia da semana</label><select id="dia" required></select></div>
+        <div class="field"><label for="horario">Horário de início</label><input id="horario" type="time" required></div>
+        <div class="field"><label for="duracao">Duração (minutos)</label><input id="duracao" type="number" min="15" max="240" step="5" value="60" required></div>
+        <div class="field"><label for="vagas">Vagas</label><input id="vagas" type="number" min="1" max="200" step="1" required></div>
+      </div>
+      <div class="alert alert-error" id="erroForm" hidden></div>
+      <div class="modal-rodape">
+        <button type="button" class="btn btn-secondary" id="btnCancelar">Cancelar</button>
+        <button type="submit" class="btn" id="btnSalvar">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../comum/sessao.js"></script>
+<script src="../comum/imagens.js"></script>
+<script src="../comum/menu.js"></script>
+<script src="../comum/crud.js"></script>
+<script src="aula.js"></script>
+</body>
+</html>

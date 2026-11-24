@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | IRON FITNESS</title>
+  <link rel="stylesheet" href="../comum/estilo.css">
+  <link rel="stylesheet" href="dashboard_gerente.css">
+</head>
+<body>
+<div class="shell">
+
+  <!-- ===================== MENU LATERAL ===================== -->
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <!-- ===================== CONTEÚDO ===================== -->
+  <main class="main-area">
+    <header class="topbar">
+      <div class="topbar-title">IRON FITNESS / Gerência</div>
+      <div class="topbar-actions">
+        <button class="btn btn-secondary mobile-menu" id="menuBtn">☰</button>
+        <span class="muted" style="font-size:12px">Área Gerência</span>
+      </div>
+    </header>
+
+    <section class="content" id="inicio">
+      <div class="banner-dashboard" data-banner="bannerGerente" role="img" aria-label="Banner da academia"></div>
+
+      <div class="page-heading">
+        <div>
+          <span class="eyebrow">Painel administrativo</span>
+          <h1>Olá, <span id="primeiroNome">Gerência</span>.</h1>
+          <p id="subtitulo">Resumo da academia.</p>
+        </div>
+        <span class="status status-off" id="statusCarga">● Carregando...</span>
+      </div>
+
+      <div class="alert alert-error" id="avisoErro" hidden></div>
+
+      <!-- Cards de números (preenchidos pelo dashboard.js com dados do PostgreSQL) -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-top"><span>Alunos cadastrados</span><span class="stat-icon">👥</span></div>
+          <div class="stat-value" id="v-alunos">–</div>
+          <div class="stat-note">Total na base</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top"><span>Funcionários</span><span class="stat-icon">🧑‍💼</span></div>
+          <div class="stat-value" id="v-funcionarios">–</div>
+          <div class="stat-note">Equipe cadastrada</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top"><span>Matrículas ativas</span><span class="stat-icon">✅</span></div>
+          <div class="stat-value" id="v-matriculas">–</div>
+          <div class="stat-note">Vigentes hoje</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top"><span>Planos disponíveis</span><span class="stat-icon">📋</span></div>
+          <div class="stat-value" id="v-planos">–</div>
+          <div class="stat-note">Ativos para venda</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top"><span>Aulas cadastradas</span><span class="stat-icon">🗓️</span></div>
+          <div class="stat-value" id="v-aulas">–</div>
+          <div class="stat-note">Na grade semanal</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top"><span>Pagamentos registrados</span><span class="stat-icon">💳</span></div>
+          <div class="stat-value" id="v-pagamentos">–</div>
+          <div class="stat-note">Registros no total</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top"><span>Pagamentos pendentes</span><span class="stat-icon">⏳</span></div>
+          <div class="stat-value" id="v-pendentes">–</div>
+          <div class="stat-note">Aguardando pagamento</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top"><span>Receita do mês</span><span class="stat-icon">💰</span></div>
+          <div class="stat-value" id="v-receita">–</div>
+          <div class="stat-note">Recebido neste mês</div>
+        </div>
+      </div>
+
+      <!-- Duas listas lado a lado -->
+      <div class="panel-grid">
+        <div class="panel">
+          <h3>Matrículas a vencer · 7 dias</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Aluno</th><th>Plano</th><th>Vencimento</th><th>Situação</th></tr></thead>
+              <tbody id="tbVencer"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Últimos pagamentos</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Aluno</th><th>Valor</th><th>Data</th><th>Status</th></tr></thead>
+              <tbody id="tbPagamentos"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="../comum/sessao.js"></script>
+<script src="../comum/imagens.js"></script>
+<script src="../comum/menu.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>

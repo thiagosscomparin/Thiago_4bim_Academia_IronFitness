@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda de aulas | IRON FITNESS</title>
+  <link rel="stylesheet" href="../comum/estilo.css">
+  <link rel="stylesheet" href="../comum/crud.css">
+</head>
+<body data-perfil="instrutor">
+<div class="shell">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main class="main-area">
+    <header class="topbar"><div class="topbar-title">IRON FITNESS / Agenda de aulas</div><div class="topbar-actions"><button class="btn btn-secondary mobile-menu" id="menuBtn">☰</button><span class="muted" style="font-size:12px">Área do Instrutor</span></div></header>
+    <section class="content">
+      <div class="page-heading">
+        <div><span class="eyebrow">Acompanhamento</span><h1>Agenda de aulas</h1>
+          <p>Suas aulas dos próximos 14 dias e a grade semanal. Clique em "Ver alunos" para ver quem reservou. Só para consulta.</p></div>
+      </div>
+
+      <div class="panel">
+        <h3>Próximas aulas</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Data</th><th>Horário</th><th>Aula</th><th>Vagas ocupadas</th><th>Situação</th><th>Ações</th></tr></thead>
+          <tbody id="tbProximas"></tbody>
+        </table></div>
+      </div>
+
+      <div class="panel" style="margin-top:16px">
+        <h3>Minha grade semanal</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Dia</th><th>Horário</th><th>Modalidade</th><th>Duração</th><th>Vagas</th></tr></thead>
+          <tbody id="tbSemana"></tbody>
+        </table></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="modal-fundo" id="modalAlunos">
+  <div class="modal" style="max-width:680px">
+    <h2 id="tituloAlunos">Alunos da aula</h2>
+    <p class="muted" id="resumoAlunos" style="margin:-6px 0 14px"></p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Aluno</th><th>Objetivo</th><th>Reserva</th></tr></thead>
+      <tbody id="tbAlunosAula"></tbody>
+    </table></div>
+    <div class="modal-rodape" style="margin-top:16px">
+      <button type="button" class="btn btn-secondary" id="btnFechar">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<script src="../comum/sessao.js"></script>
+<script src="../comum/imagens.js"></script>
+<script src="../comum/menu.js"></script>
+<script src="../comum/crud.js"></script>
+<script src="instrutor_agenda.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modalidades | IRON FITNESS</title>
+  <link rel="stylesheet" href="../comum/estilo.css">
+  <link rel="stylesheet" href="../comum/crud.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main class="main-area">
+    <header class="topbar"><div class="topbar-title">IRON FITNESS / Modalidades</div><div class="topbar-actions"><button class="btn btn-secondary mobile-menu" id="menuBtn">☰</button><span class="muted" style="font-size:12px">Área Gerência</span></div></header>
+    <section class="content">
+      <div class="page-heading">
+        <div><span class="eyebrow">Academia</span><h1>Modalidades</h1><p>Os tipos de aula oferecidos pela academia.</p></div>
+        <button class="btn" id="btnNova">+ Nova modalidade</button>
+      </div>
+      <div class="panel"><div class="table-wrap"><table>
+        <thead><tr><th>Foto</th><th>Modalidade</th><th>Descrição</th><th>Aulas</th><th>Ações</th></tr></thead>
+        <tbody id="tbModalidades"></tbody>
+      </table></div></div>
+    </section>
+  </main>
+</div>
+
+<div class="modal-fundo" id="modalModalidade">
+  <div class="modal">
+    <h2 id="tituloModal">Nova modalidade</h2>
+    <form id="formModalidade" novalidate>
+      <div class="form-grid">
+        <div class="field full"><label for="nome">Nome</label><input id="nome" maxlength="40" required></div>
+        <div class="field full"><label for="descricao">Descrição</label><textarea id="descricao" rows="3" maxlength="200"></textarea></div>
+        <div class="field full">
+          <label for="foto">Foto da modalidade (PNG, JPG ou WEBP)</label>
+          <input id="foto" type="file" accept="image/png,image/jpeg,image/webp">
+          <div class="foto-previa" id="fotoPrevia" hidden>
+            <img id="fotoImg" alt="Pré-visualização">
+            <button type="button" class="btn btn-secondary btn-sm" id="btnRemoverFoto">Remover foto</button>
+          </div>
+        </div>
+      </div>
+      <div class="alert alert-error" id="erroForm" hidden></div>
+      <div class="modal-rodape">
+        <button type="button" class="btn btn-secondary" id="btnCancelar">Cancelar</button>
+        <button type="submit" class="btn" id="btnSalvar">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../comum/sessao.js"></script>
+<script src="../comum/imagens.js"></script>
+<script src="../comum/menu.js"></script>
+<script src="../comum/crud.js"></script>
+<script src="modalidade.js"></script>
+</body>
+</html>

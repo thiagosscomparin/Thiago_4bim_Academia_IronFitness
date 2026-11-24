@@ -1,0 +1,78 @@
+/* =========================================================
+   PAGAMENTOS & MODAL PIX (pagamento.css)
+   ========================================================= */
+
+#modalPix .modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#modalPix h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#pixValor {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--accent-red-bright);
+  margin-bottom: 16px;
+}
+
+#pixQr {
+  background-color: #ffffff;
+  padding: 12px;
+  border-radius: 14px;
+  border: 3px solid var(--accent-red);
+  box-shadow: 0 10px 28px rgba(225, 29, 72, 0.25);
+  margin-bottom: 18px;
+  object-fit: contain;
+}
+
+#modalPix .field {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+#modalPix .field label {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+#pixCodigo {
+  width: 100%;
+  padding: 10px 12px;
+  background-color: #0E0E11;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: monospace;
+  font-size: 0.78rem;
+  resize: none;
+}
+
+#pixCodigo:focus {
+  outline: none;
+  border-color: var(--accent-red);
+}
+
+#modalPix small.muted {
+  display: block;
+  font-size: 0.76rem;
+  line-height: 1.45;
+  margin-bottom: 18px;
+}
+
+#modalPix .modal-rodape {
+  width: 100%;
+  justify-content: center;
+}

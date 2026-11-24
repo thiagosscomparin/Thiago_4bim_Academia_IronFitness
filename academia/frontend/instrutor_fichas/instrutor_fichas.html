@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fichas de treino | IRON FITNESS</title>
+  <link rel="stylesheet" href="../comum/estilo.css">
+  <link rel="stylesheet" href="../comum/crud.css">
+</head>
+<body data-perfil="instrutor">
+<div class="shell">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main class="main-area">
+    <header class="topbar"><div class="topbar-title">IRON FITNESS / Fichas de treino</div><div class="topbar-actions"><button class="btn btn-secondary mobile-menu" id="menuBtn">☰</button><span class="muted" style="font-size:12px">Área do Instrutor</span></div></header>
+    <section class="content">
+      <div class="page-heading">
+        <div><span class="eyebrow">Acompanhamento</span><h1>Fichas de treino</h1>
+          <p>Fichas em que você é o instrutor responsável. Só para consulta: quem cria e altera fichas é a gerência.</p></div>
+      </div>
+
+      <div class="toolbar">
+        <input type="search" id="busca" placeholder="Buscar por aluno, ficha ou objetivo...">
+        <select id="filtro" aria-label="Quais fichas mostrar">
+          <option value="ativas">Somente fichas ativas</option>
+          <option value="todas">Todas (com histórico)</option>
+        </select>
+      </div>
+
+      <div class="panel"><div class="table-wrap"><table>
+        <thead><tr><th>Aluno</th><th>Ficha</th><th>Objetivo</th><th>Exercícios</th><th>Criada em</th><th>Situação</th><th>Ações</th></tr></thead>
+        <tbody id="tbFichas"></tbody>
+      </table></div></div>
+    </section>
+  </main>
+</div>
+
+<div class="modal-fundo" id="modalFicha">
+  <div class="modal" style="max-width:860px">
+    <h2 id="tituloFicha">Ficha de treino</h2>
+    <div id="conteudoFicha"></div>
+    <div class="modal-rodape" style="margin-top:16px">
+      <button type="button" class="btn btn-secondary" id="btnFechar">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<script src="../comum/sessao.js"></script>
+<script src="../comum/imagens.js"></script>
+<script src="../comum/menu.js"></script>
+<script src="../comum/crud.js"></script>
+<script src="instrutor_fichas.js"></script>
+</body>
+</html>

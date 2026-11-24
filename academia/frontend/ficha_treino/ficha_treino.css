@@ -1,0 +1,119 @@
+/* =========================================================
+   FICHAS DE TREINO (ficha_treino.css)
+   ========================================================= */
+
+.modal.modal-largo {
+  max-width: 780px;
+}
+
+.cabecalho-exercicios {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 22px 0 14px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-color);
+}
+
+.cabecalho-exercicios h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cabecalho-exercicios h3::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 16px;
+  border-radius: 2px;
+  background-color: var(--accent-red);
+}
+
+.btn-sm {
+  padding: 7px 13px;
+  font-size: 0.78rem;
+}
+
+/* Lista dinâmica de exercícios dentro do modal */
+#listaExercicios {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 18px;
+  max-height: 340px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+#listaExercicios > div,
+.item-exercicio {
+  background-color: #0E0E11;
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--accent-red);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr auto;
+  gap: 10px;
+  align-items: end;
+}
+
+#listaExercicios input,
+#listaExercicios select {
+  width: 100%;
+  padding: 9px 11px;
+  background-color: #141418;
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+}
+
+#listaExercicios input:focus,
+#listaExercicios select:focus {
+  outline: none;
+  border-color: var(--accent-red);
+}
+
+#listaExercicios label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+#listaExercicios button {
+  padding: 9px 12px;
+  border-radius: 7px;
+  background-color: rgba(225, 29, 72, 0.14);
+  border: 1px solid var(--border-red);
+  color: #FDA4AF;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#listaExercicios button:hover {
+  background-color: var(--accent-red);
+  color: #fff;
+}
+
+@media (max-width: 720px) {
+  #listaExercicios > div,
+  .item-exercicio {
+    grid-template-columns: 1fr 1fr;
+  }
+}

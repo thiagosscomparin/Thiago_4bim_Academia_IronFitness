@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu perfil | IRON FITNESS</title>
+  <link rel="stylesheet" href="../comum/estilo.css">
+  <link rel="stylesheet" href="../comum/crud.css">
+</head>
+<body data-perfil="aluno">
+<div class="shell">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main class="main-area">
+    <header class="topbar"><div class="topbar-title">IRON FITNESS / Meu perfil</div><div class="topbar-actions"><button class="btn btn-secondary mobile-menu" id="menuBtn">☰</button><span class="muted" style="font-size:12px">Área do Aluno</span></div></header>
+    <section class="content">
+      <div class="page-heading">
+        <div><span class="eyebrow">Meu espaço</span><h1>Meu perfil</h1><p>Atualize seus dados e sua senha.</p></div>
+      </div>
+      <div class="panel">
+        <h3>Meus dados</h3>
+        <form id="formPerfil" novalidate>
+          <div class="form-grid">
+            <div class="field"><label for="cpf">CPF</label><input id="cpf" disabled></div>
+            <div class="field"><label for="nome">Nome completo</label><input id="nome" maxlength="80" required></div>
+            <div class="field"><label for="email">E-mail</label><input id="email" type="email" maxlength="80" required></div>
+            <div class="field"><label for="nascimento">Data de nascimento</label><input id="nascimento" type="date"></div>
+            <div class="field full"><label for="endereco">Endereço</label><input id="endereco" maxlength="150"></div>
+            <div class="field full"><label for="objetivo">Meu objetivo</label><input id="objetivo" maxlength="100" placeholder="Ex.: Ganho de massa muscular"></div>
+          </div>
+          <div class="alert alert-error" id="erroPerfil" hidden></div>
+          <div class="modal-rodape"><button type="submit" class="btn" id="btnSalvarPerfil">Salvar alterações</button></div>
+        </form>
+      </div>
+
+      <div class="panel" style="margin-top:16px">
+        <h3>Alterar senha</h3>
+        <form id="formSenha" novalidate>
+          <div class="form-grid">
+            <div class="field full"><label for="senhaAtual">Senha atual</label><input id="senhaAtual" type="password" maxlength="72" autocomplete="current-password" required></div>
+            <div class="field"><label for="novaSenha">Nova senha</label><input id="novaSenha" type="password" maxlength="72" autocomplete="new-password" required><small>Mínimo de 6 caracteres.</small></div>
+            <div class="field"><label for="confirmaSenha">Confirmar nova senha</label><input id="confirmaSenha" type="password" maxlength="72" autocomplete="new-password" required></div>
+          </div>
+          <div class="alert alert-error" id="erroSenha" hidden></div>
+          <div class="modal-rodape"><button type="submit" class="btn" id="btnSalvarSenha">Alterar senha</button></div>
+        </form>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="../comum/sessao.js"></script>
+<script src="../comum/imagens.js"></script>
+<script src="../comum/menu.js"></script>
+<script src="../comum/crud.js"></script>
+<script src="aluno_perfil.js"></script>
+</body>
+</html>
